@@ -1,0 +1,70 @@
+.ImagesGallery {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-evenly; 
+    align-items: center;
+    gap: 5px;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+.ImagesArray{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    /* justify-content: center; */
+    /* align-items: center; */
+    margin: 30px 15px 10px;
+}
+
+.ControlsButtons{
+    display:flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+}
+
+.PrevButton{
+    position: absolute;
+    left: 45px;
+}
+.NextButton{
+    position: absolute;
+    right: 45px;
+}
+.ControlsButtons button{
+    text-align:center;
+    font-size: medium;
+    font-weight: bold;
+    color: rgb(60, 111, 206);
+    background-color:rgb(205, 222, 253);
+    border: 2px outset cornflowerblue;
+    border-radius: 8px;
+    padding: 5px 18px;
+}
+.ControlsButtons button:hover{
+    cursor: pointer;
+    color: rgb(205, 222, 253);
+    background-color:rgb(111, 155, 236);
+    border: 2px inset rgb(205, 222, 253);
+}
+
+.Loading{
+    position: fixed;
+    top: 45%;
+    right: 45%;
+    left: 42%;
+    font-size: xx-large;
+    font-weight: bold;
+    color: rgb(60, 111, 206);
+    margin: auto;
+}
+
+.ControlsButtons button:disabled {
+    cursor: not-allowed;
+    color: gray;
+    background-color: lightgray;
+    border: 2px outset gray;
+    opacity: 0.8;
+}
