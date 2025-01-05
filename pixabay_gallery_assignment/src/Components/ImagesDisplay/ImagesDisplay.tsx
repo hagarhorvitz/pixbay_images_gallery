@@ -7,7 +7,7 @@ export function ImagesDisplay(imageProps:ImagesResponse): JSX.Element {
 
     const [clickedImage, setClickedImage] = useState<boolean>(false);
 
-    const handleCloseDetails = () => {
+    function handleCloseDetails(){
         setClickedImage(false); 
     };
 
@@ -16,7 +16,7 @@ export function ImagesDisplay(imageProps:ImagesResponse): JSX.Element {
             {
                 clickedImage && (
                     <ImageDetailsCard
-                    key={imageProps.id}
+                    key={imageProps?.id}
                     image={imageProps}
                     onCloseFunction={handleCloseDetails}/>
                 )
@@ -24,10 +24,9 @@ export function ImagesDisplay(imageProps:ImagesResponse): JSX.Element {
             {
                 !clickedImage && (
                     <img 
-                    src={imageProps.webformatURL} 
-                    alt={imageProps.tags} 
+                    src={imageProps?.webformatURL} 
+                    alt={imageProps?.tags} 
                     onClick={()=>setClickedImage(true)}
-                    // style={{display:clickedImage?'none':'block'}}
                     />
                 )
             }

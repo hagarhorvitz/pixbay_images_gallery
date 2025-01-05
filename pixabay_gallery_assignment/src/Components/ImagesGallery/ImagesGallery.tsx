@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import css from "./ImagesGallery.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, AppState, imagesActions, loadImages } from "../../Redux/State";
@@ -10,7 +10,6 @@ export function ImagesGallery(): JSX.Element {
     const dispatch: AppDispatch = useDispatch();
     const { images, category, page, loading } = useSelector((state: AppState) => state.images);
     console.log("page: ", page)
-    // const [disable, setDisable] = useState(true);
 
     useEffect(() => {
         dispatch(loadImages({ category, page }));

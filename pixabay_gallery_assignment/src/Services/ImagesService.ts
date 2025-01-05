@@ -3,7 +3,7 @@ import { ImagesResponse } from '../Types/ImagesResponseType';
 import { appConfig } from '../Utils/AppConfig';
 
 class ImagesService {
-	public async fetchPaginateImages (category: string, page: number = 1): Promise<ImagesResponse[]> {
+	public async fetchPaginateImages (category: string, page: number): Promise<ImagesResponse[]> {
         const response = await axios.get(appConfig.paginateImagesUrl, {
             params: { category, page },
         });

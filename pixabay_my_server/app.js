@@ -10,10 +10,8 @@ app.use(cors({
 
 require('dotenv').config();
 
-// Middleware for JSON parsing
 app.use(express.json());
 
-// Routes
 const imagesRoutes = require('./api/routes/imagesRoute');
 app.use('/api/images', imagesRoutes);
 
@@ -26,7 +24,6 @@ app.use((err, req, res, next) => {
 
 
 const PORT = process.env.PORT || 5000;
-// Start Server
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });

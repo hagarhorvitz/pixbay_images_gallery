@@ -25,13 +25,7 @@ export const loadImages = createAsyncThunk(
         return paginateImages;
     }
 );
-// export const loadImages = createAsyncThunk<Image[], { category: string; page: number }>(
-//     'images/loadImages', // typePrefix
-//     async ({ category, page }) => { // payloadCreator
-//         const images = await fetchImages(category, page);
-//         return images;
-//     }
-// );
+
 const imagesSlice = createSlice({
     name: 'images',
     initialState: initialState,
@@ -52,16 +46,13 @@ const imagesSlice = createSlice({
     },
 });
 
-export const imagesActions = imagesSlice.actions;   // export const { setCategory, nextPage, prevPage } = imagesSlice.actions;
+export const imagesActions = imagesSlice.actions; 
 
 export const store = configureStore<AppState>({
     reducer: {
         images: imagesSlice.reducer,
     },
 });
-// // Root state type
-// export type RootState = ReturnType<typeof store.getState>;
 
-// App dispatch type
 export type AppDispatch = typeof store.dispatch;
 
